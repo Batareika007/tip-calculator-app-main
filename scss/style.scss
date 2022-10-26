@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+// - Font size (form inputs): 24px
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	appearance: none;
+	margin: 0;
+}
+// colors
+$white: hsl(0, 0%, 100%);
+$bodyBg: hsl(185, 41%, 84%);
+
+$activeCard-btn-result: hsl(172, 67%, 45%);
+$activeFont-bgMainCard: hsl(183, 100%, 15%);
+
+$textMain: hsl(186, 14%, 43%);
+$textSecondary: hsl(184, 14%, 56%);
+$text_white: hsl(189, 41%, 97%);
+
+*,
+*::after,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+}
+
+body,
+html {
+	min-height: 100%;
+}
+
+body {
+	font-family: "Space Mono", monospace;
+	font-weight: 700;
+	background-color: $bodyBg;
+}
+h1 {
+	font-size: inherit;
+	text-transform: uppercase;
+	color: $textMain;
+	text-align: center;
+	letter-spacing: 0.3rem;
+	margin: 2rem 0 3rem;
+}
+h2 {
+	font-size: initial;
+}
+.container {
+	background-color: $white;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
+.main {
+	display: flex;
+	gap: 1rem;
+	&__inner {
+		flex: 0 1 auto;
+	}
+	&__bill {
+		color: $textMain;
+	}
+}
+
+.bill {
+	&__header {
+		margin-bottom: 1rem;
+	}
+	margin-bottom: 1rem;
+	&__input {
+		position: relative;
+		input {
+			font-size: 24px;
+			width: 100%;
+			padding-left: 2.5rem;
+			background-color: $text_white;
+			text-align: right;
+			border-radius: 0.3rem;
+			font-family: inherit;
+			color: $activeFont-bgMainCard;
+			&::placeholder {
+				opacity: 1;
+			}
+		}
+		&::before {
+			position: absolute;
+			font-size: 24px;
+			content: "$";
+			// top: -10px;
+			left: 1rem;
+			width: auto;
+			color: $textSecondary;
+		}
+	}
+}
+.tip {
+	&__header {
+		margin-bottom: 1rem;
+	}
+}
+
+.cards {
+	font-size: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	&__item {
+		position: relative;
+		border-radius: 0.5rem;
+		padding: 0.5rem 0;
+		flex: 1 1 30%;
+		text-align: center;
+		background-color: $activeFont-bgMainCard;
+		color: $white;
+		overflow: hidden;
+		cursor: pointer;
+		&:has(input[type="radio"]:checked) {
+			background-color: $activeCard-btn-result;
+			color: $activeFont-bgMainCard;
+		}
+		&:last-child {
+			background-color: $text_white;
+			color: $textMain;
+		}
+	}
+	input[type="radio"] {
+		appearance: none;
+		display: none;
+	}
+	input[type="number"] {
+		text-align: center;
+		background-color: transparent;
+		max-width: 100%;
+		font-family: inherit;
+		font-size: inherit;
+		&:focus {
+			box-sizing: border-box;
+			border: 1px solid $textMain;
+		}
+	}
+}

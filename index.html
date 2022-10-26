@@ -1,44 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="Frontend Mentor  Tip calculator app" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>spli<br />tter</h1>
 
-  Bill
+			<div class="container">
+				<div class="main">
+					<div class="main__inner">
+						<div class="main__bill">
+							<!-- bill section -->
+							<div class="bill">
+								<div class="bill__inner">
+									<h2 class="bill__header">Bill</h2>
+									<label for="bill" class="bill__input">
+										<input
+											type="number"
+											id="bill"
+											placeholder="0" />
+									</label>
+								</div>
+							</div>
+							<!-- tip section -->
+							<div class="tip">
+								<div class="tip__inner">
+									<h2 class="tip__header">Select Tip %</h2>
+									<div class="tip__cards cards">
+										<label for="tip5" class="cards__item">
+											<input
+												type="radio"
+												id="tip5"
+												name="tip" />
+											5%
+										</label>
+										<label for="tip10" class="cards__item">
+											<input
+												type="radio"
+												id="tip10"
+												name="tip" />
+											10%
+										</label>
+										<label for="tip15" class="cards__item">
+											<input
+												type="radio"
+												id="tip15"
+												name="tip" />
+											15%
+										</label>
+										<label for="tip25" class="cards__item">
+											<input
+												type="radio"
+												id="tip25"
+												name="tip" />
+											25%
+										</label>
+										<label for="tip50" class="cards__item">
+											<input
+												type="radio"
+												id="tip50"
+												name="tip" />
+											50%
+										</label>
+										<!-- custom input text -->
+										<label
+											for="tipCustom"
+											class="cards__item">
+											<input
+												type="number"
+												id="tipCustom"
+												name="custom_tip"
+												placeholder="Custom" />
+										</label>
+									</div>
+								</div>
+							</div>
+							<!-- number of People -->
+							<div class="people">
+								<div class="people__inner">
+									<h2>Number of People</h2>
+								</div>
+								<label for="people">
+									<input
+										type="numer"
+										id="people"
+										placeholder="0" />
+								</label>
+							</div>
+						</div>
+					</div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+					<div class="main__inner">
+						<div class="result">
+							<div class="result__inner">
+								<div class="result__per-person">
+									<div class="result__text">
+										<div class="result__text_main">
+											Tip Amount
+										</div>
+										<div class="result__text_secondary">
+											/ person
+										</div>
+									</div>
+									<div class="result__number">$0.00</div>
+								</div>
 
-  Number of People
+								<div class="result__per-person">
+									<div class="result__text">
+										<div class="result__text_main">
+											Total
+										</div>
+										<div class="result__text_secondary">
+											/ person
+										</div>
+									</div>
+									<div class="result__number">$0.00</div>
+								</div>
 
-  Tip Amount
-  / person
+								<div class="result__btn">
+									<button>Reset</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+		<footer class="attribution">
+			Challenge by
+			<a
+				href="https://www.frontendmentor.io?ref=challenge"
+				target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="#" target="_blank">Alexei</a>.
+		</footer>
+	</body>
 </html>

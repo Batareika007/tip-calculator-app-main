@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+
+*,
+*::after,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body,
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+h1 {
+  font-size: inherit;
+  text-transform: uppercase;
+  color: hsl(186deg, 14%, 43%);
+  text-align: center;
+  letter-spacing: 0.3rem;
+  margin: 2rem 0 3rem;
+}
+
+h2 {
+  font-size: initial;
+}
+
+.container {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+.main__inner {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+.main__bill {
+  color: hsl(186deg, 14%, 43%);
+}
+
+.bill {
+  margin-bottom: 1rem;
+}
+.bill__header {
+  margin-bottom: 1rem;
+}
+.bill__input {
+  position: relative;
+}
+.bill__input input {
+  font-size: 24px;
+  width: 100%;
+  padding-left: 2.5rem;
+  background-color: hsl(189deg, 41%, 97%);
+  text-align: right;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  color: hsl(183deg, 100%, 15%);
+}
+.bill__input input::-webkit-input-placeholder {
+  opacity: 1;
+}
+.bill__input input::-moz-placeholder {
+  opacity: 1;
+}
+.bill__input input:-ms-input-placeholder {
+  opacity: 1;
+}
+.bill__input input::-ms-input-placeholder {
+  opacity: 1;
+}
+.bill__input input::placeholder {
+  opacity: 1;
+}
+.bill__input::before {
+  position: absolute;
+  font-size: 24px;
+  content: "$";
+  left: 1rem;
+  width: auto;
+  color: hsl(184deg, 14%, 56%);
+}
+
+.tip__header {
+  margin-bottom: 1rem;
+}
+
+.cards {
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.cards__item {
+  position: relative;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
+  text-align: center;
+  background-color: hsl(183deg, 100%, 15%);
+  color: hsl(0deg, 0%, 100%);
+  overflow: hidden;
+  cursor: pointer;
+}
+.cards__item:has(input[type=radio]:checked) {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.cards__item:last-child {
+  background-color: hsl(189deg, 41%, 97%);
+  color: hsl(186deg, 14%, 43%);
+}
+.cards input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: none;
+}
+.cards input[type=number] {
+  text-align: center;
+  background-color: transparent;
+  max-width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+}
+.cards input[type=number]:focus {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid hsl(186deg, 14%, 43%);
+}
