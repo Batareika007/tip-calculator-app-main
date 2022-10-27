@@ -16,11 +16,16 @@ let tipResult
 // get input
 bill.addEventListener("input", (e) => {
 	billResult = e.target.value
+
 	result()
 })
 
 people.addEventListener("input", (e) => {
 	peopleResult = e.target.value
+	if (peopleResult === 0) {
+		console.log(`Can't be zero`)
+	}
+
 	result()
 })
 
@@ -35,6 +40,7 @@ tipCustom.addEventListener("input", (e) => {
 tipAmount.forEach((e) => {
 	e.addEventListener("click", (el) => {
 		tipResult = el.target.value
+
 		result()
 	})
 })
@@ -44,15 +50,18 @@ function result() {
 	let totalTip = 0
 	if (billResult > 0 && peopleResult > 0) {
 		if (tipResult) {
-			totalTip = Number((billResult / 100) * tipResult)
+			totalTip = (billResult / 100) * tipResult
 		}
-		const calculating = (
+
+		const personTip = (
 			(Number(billResult) + totalTip) /
 			Number(peopleResult)
 		).toFixed(2)
-		personTotalCount.innerHTML = `$${calculating}`
-		personTipCount.innerHTML = `$${(totalTip / peopleResult).toFixed(2)}`
+		const personTotal = (totalTip / peopleResult).toFixed(2)
+		personTipCount.innerHTML = `$${personTotal}`
+		personTotalCount.innerHTML = `$${personTip}`
 	}
+
 	resetBtn.classList.add("active")
 }
 

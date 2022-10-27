@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
 // - Font size (form inputs): 24px
 /* remove input number arrow if need */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
 	appearance: none;
 	margin: 0;
+}
+
+input[type="number"] {
+	appearance: textfield;
+	-moz-appearance: textfield;
 }
 // colors
 $white: hsl(0, 0%, 100%);
