@@ -59,8 +59,8 @@ h2 {
 }
 .main__inner {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
 }
 .main__bill {
   color: hsl(186deg, 14%, 43%);
@@ -78,7 +78,7 @@ h2 {
 .bill__input input {
   font-size: 24px;
   width: 100%;
-  padding-left: 2.5rem;
+  padding: 0 1rem 0 2.5rem;
   background-color: hsl(189deg, 41%, 97%);
   text-align: right;
   border-radius: 0.3rem;
@@ -102,11 +102,14 @@ h2 {
 }
 .bill__input::before {
   position: absolute;
-  font-size: 24px;
-  content: "$";
   left: 1rem;
-  width: auto;
-  color: hsl(184deg, 14%, 56%);
+  top: 0;
+}
+.bill__input.people-count::before {
+  content: url(../images/icon-person.svg);
+}
+.bill__input.total-cost::before {
+  content: url(../images/icon-dollar.svg);
 }
 
 .tip__header {
@@ -135,14 +138,35 @@ h2 {
   color: hsl(0deg, 0%, 100%);
   overflow: hidden;
   cursor: pointer;
+  border: 2px solid transparent;
 }
 .cards__item:has(input[type=radio]:checked) {
   background-color: hsl(172deg, 67%, 45%);
   color: hsl(183deg, 100%, 15%);
 }
+.cards__item:has(input[type=number]:focus) {
+  border: 2px solid hsl(172deg, 67%, 45%);
+}
+.cards__item:has(input[type=number]:focus) input {
+  color: hsl(183deg, 100%, 15%);
+}
+.cards__item:has(input[type=number]:focus) input::-webkit-input-placeholder {
+  color: transparent;
+}
+.cards__item:has(input[type=number]:focus) input::-moz-placeholder {
+  color: transparent;
+}
+.cards__item:has(input[type=number]:focus) input:-ms-input-placeholder {
+  color: transparent;
+}
+.cards__item:has(input[type=number]:focus) input::-ms-input-placeholder {
+  color: transparent;
+}
+.cards__item:has(input[type=number]:focus) input::placeholder {
+  color: transparent;
+}
 .cards__item:last-child {
   background-color: hsl(189deg, 41%, 97%);
-  color: hsl(186deg, 14%, 43%);
 }
 .cards input[type=radio] {
   -webkit-appearance: none;
@@ -151,14 +175,60 @@ h2 {
   display: none;
 }
 .cards input[type=number] {
-  text-align: center;
   background-color: transparent;
   max-width: 100%;
   font-family: inherit;
   font-size: inherit;
+  text-align: center;
 }
-.cards input[type=number]:focus {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px solid hsl(186deg, 14%, 43%);
+.cards input[type=number]::-webkit-input-placeholder {
+  text-align: center;
+}
+.cards input[type=number]::-moz-placeholder {
+  text-align: center;
+}
+.cards input[type=number]:-ms-input-placeholder {
+  text-align: center;
+}
+.cards input[type=number]::-ms-input-placeholder {
+  text-align: center;
+}
+.cards input[type=number]::placeholder {
+  text-align: center;
+}
+
+.result {
+  height: 100%;
+}
+.result__inner {
+  background-color: hsl(183deg, 100%, 15%);
+  height: 100%;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.result__btn {
+  margin-top: auto;
+  width: 100%;
+  opacity: 0.3;
+}
+.result__btn button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0;
+  width: 100%;
+  color: inherit;
+  background-color: hsl(172deg, 67%, 45%);
+  font-size: 24px;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+.result__btn.active {
+  opacity: 1;
 }

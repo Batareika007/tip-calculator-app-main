@@ -61,7 +61,7 @@ h2 {
 	display: flex;
 	gap: 1rem;
 	&__inner {
-		flex: 0 1 auto;
+		flex: 0 1 50%;
 	}
 	&__bill {
 		color: $textMain;
@@ -78,7 +78,7 @@ h2 {
 		input {
 			font-size: 24px;
 			width: 100%;
-			padding-left: 2.5rem;
+			padding: 0 1rem 0 2.5rem;
 			background-color: $text_white;
 			text-align: right;
 			border-radius: 0.3rem;
@@ -90,15 +90,18 @@ h2 {
 		}
 		&::before {
 			position: absolute;
-			font-size: 24px;
-			content: "$";
-			// top: -10px;
 			left: 1rem;
-			width: auto;
-			color: $textSecondary;
+			top: 0;
+		}
+		&.people-count::before {
+			content: url(../images/icon-person.svg);
+		}
+		&.total-cost::before {
+			content: url(../images/icon-dollar.svg);
 		}
 	}
 }
+
 .tip {
 	&__header {
 		margin-bottom: 1rem;
@@ -121,13 +124,23 @@ h2 {
 		color: $white;
 		overflow: hidden;
 		cursor: pointer;
+		border: 2px solid transparent;
 		&:has(input[type="radio"]:checked) {
 			background-color: $activeCard-btn-result;
 			color: $activeFont-bgMainCard;
 		}
+		&:has(input[type="number"]:focus) {
+			border: 2px solid $activeCard-btn-result;
+			input {
+				// text-align: center;
+				color: $activeFont-bgMainCard;
+				&::placeholder {
+					color: transparent;
+				}
+			}
+		}
 		&:last-child {
 			background-color: $text_white;
-			color: $textMain;
 		}
 	}
 	input[type="radio"] {
@@ -135,14 +148,45 @@ h2 {
 		display: none;
 	}
 	input[type="number"] {
-		text-align: center;
 		background-color: transparent;
 		max-width: 100%;
 		font-family: inherit;
 		font-size: inherit;
-		&:focus {
-			box-sizing: border-box;
-			border: 1px solid $textMain;
+		text-align: center;
+		&::placeholder {
+			text-align: center;
+		}
+	}
+}
+
+.result {
+	height: 100%;
+	&__inner {
+		background-color: $activeFont-bgMainCard;
+		height: 100%;
+		border-radius: 1rem;
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__btn {
+		margin-top: auto;
+		width: 100%;
+		opacity: 0.3;
+		button {
+			cursor: pointer;
+			border-radius: 0.5rem;
+			padding: 0.3rem 0;
+			width: 100%;
+			color: inherit;
+			background-color: $activeCard-btn-result;
+			font-size: 24px;
+			font-family: inherit;
+			text-transform: uppercase;
+		}
+		&.active {
+			opacity: 1;
 		}
 	}
 }
