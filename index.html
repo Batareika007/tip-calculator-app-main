@@ -59,35 +59,40 @@
 											<input
 												type="radio"
 												id="tip5"
-												name="tip" />
+												name="tip"
+												value="5" />
 											5%
 										</label>
 										<label for="tip10" class="cards__item">
 											<input
 												type="radio"
 												id="tip10"
-												name="tip" />
+												name="tip"
+												value="10" />
 											10%
 										</label>
 										<label for="tip15" class="cards__item">
 											<input
 												type="radio"
 												id="tip15"
-												name="tip" />
+												name="tip"
+												value="15" />
 											15%
 										</label>
 										<label for="tip25" class="cards__item">
 											<input
 												type="radio"
 												id="tip25"
-												name="tip" />
+												name="tip"
+												value="25" />
 											25%
 										</label>
 										<label for="tip50" class="cards__item">
 											<input
 												type="radio"
 												id="tip50"
-												name="tip" />
+												name="tip"
+												value="50" />
 											50%
 										</label>
 										<!-- custom input text -->
@@ -127,7 +132,7 @@
 					<div class="main__inner">
 						<div class="result">
 							<div class="result__inner">
-								<div class="result__per-person">
+								<div class="result__person">
 									<div class="result__text">
 										<div class="result__text_main">
 											Tip Amount
@@ -136,10 +141,14 @@
 											/ person
 										</div>
 									</div>
-									<div class="result__number">$0.00</div>
+									<div
+										class="result__number"
+										id="person-tip-count">
+										$0.00
+									</div>
 								</div>
 
-								<div class="result__per-person">
+								<div class="result__person">
 									<div class="result__text">
 										<div class="result__text_main">
 											Total
@@ -148,11 +157,16 @@
 											/ person
 										</div>
 									</div>
-									<div class="result__number">$0.00</div>
+
+									<div
+										class="result__number"
+										id="person-total-count">
+										$0.00
+									</div>
 								</div>
 
-								<div class="result__btn">
-									<button id="resultbtn">Reset</button>
+								<div class="result__btn" id="resultbtn">
+									<button>Reset</button>
 								</div>
 							</div>
 						</div>
@@ -169,5 +183,6 @@
 				>Frontend Mentor</a
 			>. Coded by <a href="#" target="_blank">Alexei</a>.
 		</footer>
+		<script src="script/script.js"></script>
 	</body>
 </html>
