@@ -277,3 +277,30 @@ h2 {
 .result__btn.active:hover button {
   background-color: hsl(185deg, 41%, 84%);
 }
+
+.bill__heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.errormsg {
+  color: rgb(253, 124, 38);
+  display: none;
+}
+.errormsg.active {
+  display: unset;
+}
+
+@media screen and (max-width: 425px) {
+  main,
+.cards__item {
+    font-size: 70%;
+  }
+}

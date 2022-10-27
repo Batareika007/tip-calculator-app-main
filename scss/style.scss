@@ -229,3 +229,24 @@ h2 {
 		}
 	}
 }
+
+.bill__heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+.errormsg {
+	color: rgb(253, 124, 38);
+	display: none;
+	&.active {
+		display: unset;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	main,
+	.cards__item {
+		font-size: 70%;
+	}
+}

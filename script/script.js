@@ -22,8 +22,12 @@ bill.addEventListener("input", (e) => {
 
 people.addEventListener("input", (e) => {
 	peopleResult = e.target.value
-	if (peopleResult === 0) {
-		console.log(`Can't be zero`)
+	if (peopleResult == 0) {
+		document.querySelector(".errormsg").classList.add("active")
+		e.target.style.outline = "2px solid rgb(253, 124, 38)"
+	} else {
+		e.target.style.outline = "none"
+		document.querySelector(".errormsg").classList.remove("active")
 	}
 
 	result()
@@ -31,16 +35,27 @@ people.addEventListener("input", (e) => {
 
 tipCustom.addEventListener("input", (e) => {
 	tipResult = e.target.value
+
 	tipAmount.forEach((e) => {
 		e.checked = false
+		document.querySelectorAll(".cards__item").forEach((e) => {
+			e.style.backgroundColor = ""
+			e.style.color = ""
+		})
 	})
 	result()
 })
 
 tipAmount.forEach((e) => {
 	e.addEventListener("click", (el) => {
+		document.querySelectorAll(".cards__item").forEach((e) => {
+			e.style.backgroundColor = ""
+			e.style.color = ""
+		})
 		tipResult = el.target.value
-
+		el.composedPath()[1].style.backgroundColor = "hsl(172, 67%, 45%)"
+		el.composedPath()[1].style.color = "hsl(183, 100%, 15%)"
+		tipCustom.value = ""
 		result()
 	})
 })
