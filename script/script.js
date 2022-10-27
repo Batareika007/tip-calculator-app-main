@@ -43,7 +43,9 @@ tipAmount.forEach((e) => {
 function result() {
 	let totalTip = 0
 	if (billResult > 0 && peopleResult > 0) {
-		totalTip = Number((billResult / 100) * tipResult)
+		if (tipResult) {
+			totalTip = Number((billResult / 100) * tipResult)
+		}
 		const calculating = (
 			(Number(billResult) + totalTip) /
 			Number(peopleResult)
